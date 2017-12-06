@@ -19,6 +19,21 @@ function playsByArtist(data) {
   );
 }
 
+function playsBySong(data) {
+  const plays = {};
+  data.forEach(d => {
+    const name = `${d.title} - ${d.artist}`;
+    plays[name] = plays[name] || 0;
+    plays[name]++;
+  });
+
+  return (
+    Object.keys(plays)
+      .map(name => [name, plays[name]])
+      .sort((a, b) => b[1]-a[1])
+  );
+}
+
 function labelsFromData(data) {
   const labels = [];
   data.forEach(d => {
@@ -53,7 +68,8 @@ function datasetsFromData(data, labels, artistFilter) {
 }
 
 const plays = playsByArtist(data);
-console.log(plays);
+console.log(plays.slice(0,40));
+console.log(playsBySong(data).slice(0,40));
 const topArtists = new Set(plays.slice(0, 20).map(a => a[0]));
 
 const labels = labelsFromData(data);
