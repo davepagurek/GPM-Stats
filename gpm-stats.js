@@ -30,6 +30,7 @@ function collectDataUntil(date) {
           currentDate = new Date(new Date().setDate(new Date().getDate()-1));
         } else {
           currentDate = new Date(dateText);
+          console.log(currentDate.getFullYear());
         }
         return;
       }
@@ -41,15 +42,17 @@ function collectDataUntil(date) {
       data.push({
         title: title.textContent.trim(),
         artist: artist.textContent.trim(),
-        date: currentDate.toString()
+        date: currentDate.toISOString()
       });
     });
 
     return data;
   }
 
-  collectDataUntil(date, () => {
+  collectUntil(date, () => {
     const data = processCards();
-    console.log(JSON.stringify(data));
+
+    // Pretty printed JSON
+    console.log(JSON.stringify(data, null, 2));
   });
 }

@@ -1,0 +1,12 @@
+{
+  "name": "gpm-stats",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Dave Pagurek <dave@davepagurek.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^2.7.1",
+    "chartjs-node": "^1.6.0",
+    "randomcolor": "^0.5.3"
+  }
+}
