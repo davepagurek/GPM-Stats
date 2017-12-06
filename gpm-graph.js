@@ -71,7 +71,7 @@ const chartOptions = {
   options: {
     title: {
       display: true,
-      text: 'Artist soung counts over time'
+      text: 'Artist song counts over time'
     },
     scales: {
       xAxes: [{
