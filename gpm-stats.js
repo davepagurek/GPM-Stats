@@ -1,6 +1,6 @@
 // Date is a string like "September 1"
 function collectDataUntil(date) {
-  const content = document.getElementById('main-content');
+  const content = document.querySelector('.main-column');
 
   function collectUntil(date, callback) {
     const UPDATE_INTERVAL = 200;
