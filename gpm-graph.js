@@ -37,7 +37,7 @@ function playsBySong(data) {
 function labelsFromData(data) {
   const labels = [];
   data.forEach(d => {
-    if (labels.length === 0 || labels[labels.length-1] != d.date) {
+    if (labels.length === 0 || (new Date(labels[labels.length-1]).getTime() - new Date(d.date).getTime()) >= 6.048e8) {
       labels.push(d.date);
     }
   });
